@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var passport = require('passport');
 var FitbitStrategy = require('passport-fitbit').Strategy;
-var keys = require('../keys.js');
+// var keys = require( '../keys.js');
 var db = require('../public/javascripts/db.js');
 
 
@@ -23,8 +23,8 @@ passport.deserializeUser(function(obj, done) {
 var url = 'http://localhost:1337/auth/fitbit/callback';
 
 passport.use(new FitbitStrategy({
-  consumerKey: keys.consumerKey,
-  consumerSecret: keys.consumerSecret,
+  consumerKey: process.env.CONSUMER_KEY,
+  consumerSecret: process.env.CONSUMER_SECRET,
   callbackURL: url
 },
 function (token, tokenSecret, profile, done) {
