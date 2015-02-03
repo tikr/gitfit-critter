@@ -9,10 +9,7 @@ var passport = require('passport');
 var routes = require('./routes/index');
 var session = require('express-session');
 
-
-
 var app = express();
-
 
 app.use(favicon(__dirname + '/public/favicon.ico'));
 app.use(logger('dev'));
