@@ -13,6 +13,9 @@ sendgrid.send({
   }, function(err, json) {
     if (err) {
       console.error(err);
+    } else {
+      console.log('sent email', json);
     }
 });
 
+console.log('cron job running');
