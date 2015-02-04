@@ -3,9 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www",
-    "test": "node bin/www& ./node_modules/.bin/mocha --bail --reporter nyan test/test.js; pkill -n node;",
-    "postinstall": "./node_modules/bower/bin/bower install"
+    "start": "node server/config.js",
+    "test": "node bin/www& ./node_modules/.bin/mocha --bail --reporter nyan test/test.js; pkill -n node;"
   },
   "dependencies": {
     "body-parser": "~1.10.2",
