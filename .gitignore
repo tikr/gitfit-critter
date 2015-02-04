@@ -2,6 +2,7 @@ node_modules
 
 .tmp
 .env
+example.env
 
 bower_components
 *.log
