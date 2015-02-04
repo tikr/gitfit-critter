@@ -23,6 +23,10 @@ router.get('/login', function (req, res, next){
   res.redirect('/auth/fitbit');
 });
 
+router.get('/create', function (req, res){
+  res.redirect('views/create.html');
+});
+
 passport.use(fitbitControl.fitbitStrategy);
 router.get('/auth/fitbit', passport.authenticate('fitbit', { failureRedirect: '/login' }), function (req,res) {
 });
