@@ -1,0 +1,18 @@
+#!/usr/bin/env node
+
+var sendgrid = require('sendgrid')(
+  process.env.SENDGRID_USERNAME,
+  process.env.SENDGRID_PASSWORD
+);
+
+sendgrid.send({
+    to: 'mikestaub22@gmail.com',
+    from: 'mikestaub22@gmail.com',
+    subject: 'test',
+    text: 'message'
+  }, function(err, json) {
+    if (err) {
+      console.error(err);
+    }
+});
+
