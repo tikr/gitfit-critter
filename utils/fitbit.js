@@ -11,6 +11,7 @@ module.exports = exports = {
     }, function (token, tokenSecret, profile, done) {
       //after oath login call this success handler
           //add user to db
+/***** Change to mongodb *****/
           dbHelper.addUser(token, tokenSecret, profile);
           //this line waits for 26 to finish
           exports.getStats(profile.id, token, tokenSecret).then(function() {
@@ -24,6 +25,7 @@ module.exports = exports = {
     //creates the request to get activites json from fitbit
     return client.requestResource('/activities.json', 'GET', token, secret).then(function (data) {
         //success handler for req, return the promise
+/***** Change to mongodb *****/
         dbHelper.addUserStats(userID, data[0]);
       }, function (err) {
         console.log('ERROR!',err);
