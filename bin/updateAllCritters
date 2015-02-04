@@ -4,18 +4,27 @@ var sendgrid = require('sendgrid')(
   process.env.SENDGRID_USERNAME,
   process.env.SENDGRID_PASSWORD
 );
+var User = require('./models/user');
+var mongoose = require('mongoose');
+var MONGO_URI = 'mongodb://admin:admin@ds041561.mongolab.com:41561/heroku_app33693178'
 
-sendgrid.send({
-    to: 'mikestaub22@gmail.com',
-    from: 'mikestaub22@gmail.com',
-    subject: 'test',
-    text: 'message'
-  }, function(err, json) {
-    if (err) {
-      console.error(err);
-    } else {
-      console.log('sent email', json);
-    }
-});
+// mongoose.connect(MONGO_URI);
 
-console.log('cron job running');
+// User.find({}, function(err, users){
+//   if(err) throw err;
+//   console.log(users);
+
+// });
+
+// sendgrid.send({
+//     to: 'mikestaub22@gmail.com',
+//     from: 'mikestaub22@gmail.com',
+//     subject: 'test',
+//     text: 'message'
+//   }, function(err, json) {
+//     if (err) {
+//       console.error(err);
+//     } else {
+//       console.log('sent email', json);
+//     }
+// });
