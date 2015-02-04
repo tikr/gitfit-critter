@@ -19,7 +19,11 @@
     "fitbit-node": "^0.1.0",
     "github-api": "^0.10.3",
     "mocha": "^2.1.0",
+<<<<<<< HEAD
     "mongoose": "^3.8.22",
+=======
+    "mongodb": "^1.4.30",
+>>>>>>> added mongodb
     "morgan": "~1.5.1",
     "passport": "^0.2.1",
     "passport-fitbit": "^0.1.2",
