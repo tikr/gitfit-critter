@@ -1,13 +1,15 @@
-'use strict';
+angular.module('gitfitApp', ['ngRoute'])
+  .config(function($routeProvider, $locationProvider) {
+    $routeProvider
+      .when('/', {
+        templateUrl: 'views/main.html'
+      })
+      .when('/critter/:username', {
+        templateUrl: 'views/profile.html'
+      })
+      .otherwise({
+        redirectTo: '/'
+      });
 
-var app = angular
-  .module('pathleteApp', ['ngRoute']);
-
-app.config(function($routeProvider, $locationProvider) {
-  $routeProvider
-    .when('/', {
-      templateUrl: 'views/main.html'
-    });
-
-  $locationProvider.html5Mode({enabled: true, requireBase: false});
+  $locationProvider.html5Mode(true);
 });
