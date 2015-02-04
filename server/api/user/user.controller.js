@@ -46,30 +46,30 @@ exports.show = function (req, res) {
       "login": "rvbsanjose"
     },
     "skills": [
-        {
-          "skillname": "Angular",
-          "githublink": "https://github.com/rvbsanjose/selfeeds"
-        },
-        {
-          "skillname": "Python",
-          "githublink": "https://github.com/rvbsanjose/python"
-        },
-        {
-          "skillname": "Lua",
-          "githublink": "https://github.com/rvbsanjose/lua"
-        },
-        {
-          "skillname": "PHP",
-          "githublink": "https://github.com/rvbsanjose/php"
-        },
-        {
-          "skillname": "Julia",
-          "githublink": "https://github.com/rvbsanjose/julia"
-        },
-        {
-          "skillname": "Backbone",
-          "githublink": "https://github.com/rvbsanjose/500_Backbone"
-        }
+      {
+        "skillname": "Angular",
+        "githublink": "https://github.com/rvbsanjose/selfeeds"
+      },
+      {
+        "skillname": "Python",
+        "githublink": "https://github.com/rvbsanjose/python"
+      },
+      {
+        "skillname": "Lua",
+        "githublink": "https://github.com/rvbsanjose/lua"
+      },
+      {
+        "skillname": "PHP",
+        "githublink": "https://github.com/rvbsanjose/php"
+      },
+      {
+        "skillname": "Julia",
+        "githublink": "https://github.com/rvbsanjose/julia"
+      },
+      {
+        "skillname": "Backbone",
+        "githublink": "https://github.com/rvbsanjose/500_Backbone"
+      }
     ],
     "role": "user",
     "__v": 0,
@@ -89,13 +89,13 @@ exports.show = function (req, res) {
       "JavaScript": 12742586
     },
     critter: {
-      "dob": "2015-02-03",
+      "dob": "02-03-2015",
       "name": "Mongolicious",
       "level": 109,
       "type": "Air",
       "food": {
-        "current": 409,
-        "needed": 217
+        "current": 103,
+        "needed": 417
       }
     }
   });

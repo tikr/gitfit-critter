@@ -1,15 +1,6 @@
-// var Users  = require('../app/controllers/users');
-
 var users = require('express').Router();
+var controller  = require('./api/user/user.controller');
 
-users.get('/api/users/:username', function (req, res) {
-  res.status(200).json('hello world');
-})
+users.get('/:username', controller.show);
 
-users.all('*', function (req, res) {
-  res.sendFile('index.html', { root: __dirname + '/../public/' });
-});
-
-module.exports = {
-  users: users,
-};
+module.exports = users;

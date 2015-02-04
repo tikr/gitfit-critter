@@ -1,4 +1,4 @@
-angular.module('gitfitApp', [])
+angular.module('gitfitApp.directive.header', [])
   .directive('gitfitHeader', [function () {
     return {
       restrict: 'A',

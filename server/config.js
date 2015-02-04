@@ -17,4 +17,4 @@ module.exports = {
 		password: process.env.SENDGRID_PASSWORD
 	},
 	cronToken: 'a1d2d684c73a2ef06ec30742a3c721b756a01969'
-}
+};
