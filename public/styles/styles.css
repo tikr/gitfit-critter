@@ -42,7 +42,7 @@
 }
 .placeholder img {
   display: inline-block;
-  border-radius: 50%;
+  /* border-radius: 50%; */
 }
 
 .external-logo {
@@ -86,8 +86,15 @@
 }
 
 #critter-info {
-  text-align: center;
-  margin-top: 450px;
+  margin-top: 100px;
+}
+
+#schedule {
+  left: -13px;
+}
+
+.c3-tooltip-container {
+  text-align: left;
 }
 
 #fitbit-singup-button {

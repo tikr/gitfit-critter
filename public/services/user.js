@@ -30,6 +30,30 @@ angular.module('gitfitApp.service.user', [])
           },
           color: {
             pattern: ['#63BCB8', '#F56462']
+          },
+          size: {
+            height: 300,
+            width: 300
+          }
+        });
+      },
+
+      level: function (user) {
+        var patterns = [
+          '#EFC94C', '#45B29D', '#E27A3F', '#DF5A49', '#FF436A', '#13DCF2',
+          '#06ADBF', '#B9E366', '#7D4F7D', '#BBBEB5', '#9DA5A8', '#757E8E',
+          '#F2E3B6', '#F28C8C', '#BEDB39', '#1C8442', '#6F92BF', '#B0D165'
+        ];
+        return c3.generate({
+          bindto: '#level',
+          data: {
+            columns: [
+              [ 'Current', 61.8 ]
+            ],
+            type : 'gauge'
+          },
+          color: {
+            pattern: [ '#06ADBF' ]
           }
         });
       },
@@ -51,12 +75,11 @@ angular.module('gitfitApp.service.user', [])
           }
           plots.push(points);
         }
-        console.log(patts);
         return c3.generate({
           bindto: '#schedule',
           data: {
             columns: plots,
-            type : 'area'
+            type: 'area'
           },
           color: {
             pattern: patts
@@ -80,6 +103,9 @@ angular.module('gitfitApp.service.user', [])
                 position: 'outer-middle'
               }
             }
+          },
+          tooltip: {
+            // show: false
           }
         });
       }
