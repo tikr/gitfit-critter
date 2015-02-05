@@ -5,32 +5,23 @@ exports.setup = function (User, config) {
   passport.use(new GitHubStrategy({
       clientID: config.github.id,
       clientSecret: config.github.secret,
-      callbackURL: config.github.callbackURL
+      callbackURL: config.github.callbackURL,
+      passReqToCallback: true
     },
-    function(token, tokenSecret, profile, done) {
-    User.findOne({
-      'github.id': profile.id
-    }, function(err, user) {
-      if (err) {
-        return done(err);
-      }
-      if (!user) {
-        user = new User({
-          name: profile.displayName,
-          username: profile.username,
-          role: 'user',
-          provider: 'github',
-          github: profile._json
-        });
-        user.save(function(err) {
-          if (err) return done(err);
-          user.getSkills(token);
-          return done(err, user);
-        });
-      } else {
-        return done(err, user);
-      }
-    });
+    function(req, token, tokenSecret, profile, done) {
+      User.findOne({
+        'fitbit.user.encodedId': req.query.state
+      }, function(err, user) {
+        if (err || !user) {
+          return done(err);
+        } else {
+          user.github = profile._json;
+          user.save(function(err){
+            if(err) throw err;
+            return done(err, user);
+          });
+        }
+      });
     }
   ));
 };

@@ -6,7 +6,6 @@ var http     = require('http'),
     config   = require('./config'),
     express  = require('express'),
     passport = require('passport'),
-    routes   = require('./routes'),
     session  = require('express-session'),
     mongoStore = require('connect-mongo')(session),
     mongoose = require('mongoose');
@@ -29,7 +28,7 @@ app.use(passport.session());
 
 app.use(express.static(path.join(__dirname, '/../public')));
 
-app.use('/api/users', routes);
+app.use('/api/users', require('./api/user'));
 app.use('/auth', require('./auth'));
 
 app.all('*', function (req, res) {

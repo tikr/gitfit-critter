@@ -7,14 +7,18 @@ var auth = require('../auth.service');
 var router = express.Router();
 
 router
-  .get('/', passport.authenticate('github', {
-    failureRedirect: '/signup',
-    session: false
-  }))
+  .get('/', function(req, res, next){
+  	passport.authenticate('github', {
+      failureRedirect: '/signup',
+      session: false,
+      // pull off encodedId from URL
+      state: req.url.split('=')[1]
+    })(req, res, next);
+  })
 
   .get('/callback', passport.authenticate('github', {
     failureRedirect: '/signup',
     session: false
-  }), auth.setTokenCookie);
+  }));
 
 module.exports = router;
