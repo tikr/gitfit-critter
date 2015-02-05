@@ -115,6 +115,14 @@ body {
     margin-left: -50px;
 }
 
+.create-creature-img {
+    max-width: 200px;
+}
+
+.critter-img-container {
+    display: inline-block;
+}
+
 #critter-info {
   margin-top: 400px;
 }

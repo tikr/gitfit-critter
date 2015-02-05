@@ -1,4 +1,24 @@
-<!-- This is a placeholder button to enable github auth -->
-<a class="btn btn-github" style='background-color:black;'href="" ng-click="githubAuth()">
-  <i class="fa fa-5x fa-github"></i> Connect with Github
-</a>
+<div ng-controller="CritterCreateCtrl">
+    <h1>Choose your Critter!<h1>
+    <div class="critter-img-container">
+        <img src="images/earth.jpg" alt="Cute earth" class="img-circle create-creature-img">
+        <br>
+        <a class="btn btn-lg btn-success" ng-href="/githubloginearth" target="_self">Choose</a>
+
+    </div>
+    <div class="critter-img-container">
+        <img src="images/water.jpg" alt="Cute water" class="img-circle create-creature-img">
+        <br>
+        <a class="btn btn-lg btn-success" ng-href="/githubloginwater" target="_self">Choose</a>
+    </div>
+    <div class="critter-img-container">
+        <img src="images/fire.jpg" alt="Cute fire" class="img-circle create-creature-img">
+        <br>
+        <a class="btn btn-lg btn-success" ng-href="/githubloginfire" target="_self">Choose</a>
+    </div>
+    <div class="critter-img-container">
+        <img src="images/air.jpg" alt="Cute air" class="img-circle create-creature-img">
+        <br>
+        <a class="btn btn-lg btn-success" ng-href="/githubloginair" target="_self">Choose</a>
+    </div>
+</div>
