@@ -1,1 +1,22 @@
-//todo
+/***** Copied from tikr edit as required *****/
+'use strict';
+
+var express = require('express');
+var controller = require('./user.controller');
+var config = require('../../config');
+var auth = require('../../auth/auth.service');
+
+var router = express.Router();
+
+router.get('/', auth.hasRole('admin'), controller.index);
+router.delete('/:id', auth.hasRole('admin'), controller.destroy);
+router.get('/me', auth.isAuthenticated(), controller.me);
+router.post('/me/search', auth.isAuthenticated(), controller.search);
+router.put('/:id/password', auth.isAuthenticated(), controller.changePassword);
+router.get('/:id', auth.isAuthenticated(), controller.show);
+router.post('/', controller.create);
+router.get('/profiles/:githubUsername', controller.getUserProfile);
+router.post('/profiles/:githubUsername', auth.isAuthenticated(), controller.postNewSkill);
+
+module.exports = router;
+/***** End copied from tikr *****/
