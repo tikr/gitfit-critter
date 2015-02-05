@@ -10,6 +10,10 @@ angular.module('gitfitApp',
     .when('/', {
       templateUrl: 'views/main.html'
     })
+    .when('/critter/create', {
+      templateUrl: 'views/create.html',
+      controller: 'createCtrl'
+    })
     .when('/critter/:username', {
       templateUrl: 'views/profile.html',
       controller: 'ProfileCtrl'
