@@ -3,8 +3,8 @@ exports.setup = function (User, config) {
   var GitHubStrategy = require('passport-github').Strategy;
 
   passport.use(new GitHubStrategy({
-      clientID: config.github.clientID,
-      clientSecret: config.github.clientSecret,
+      clientID: config.github.id,
+      clientSecret: config.github.secret,
       callbackURL: config.github.callbackURL
     },
     function(token, tokenSecret, profile, done) {

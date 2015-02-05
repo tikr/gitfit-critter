@@ -1,5 +1,7 @@
 'use strict';
 
+// Need to add the schema to this
+
 // var User = require('./user.model');
 
 /**
@@ -107,7 +109,7 @@
 
 var User = require('./user.model');
 var passport = require('passport');
-var config = require('../../config/environment');
+var config = require('../../config');
 var jwt = require('jsonwebtoken');
 
 var validationError = function(res, err) {

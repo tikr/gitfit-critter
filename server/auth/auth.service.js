@@ -2,7 +2,7 @@
 
 var mongoose = require('mongoose');
 var passport = require('passport');
-var config = require('../config/environment');
+var config = require('../config');
 var jwt = require('jsonwebtoken');
 var expressJwt = require('express-jwt');
 var compose = require('composable-middleware');
@@ -64,6 +64,7 @@ function signToken(id) {
  * Set token cookie directly for oAuth strategies
  */
 function setTokenCookie(req, res) {
+    console.log('set token cookie', req)
   if (!req.user) return res.json(404, { message: 'Something went wrong, please try again.'});
   var token = signToken(req.user._id, req.user.role);
   res.cookie('token', JSON.stringify(token));

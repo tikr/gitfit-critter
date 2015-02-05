@@ -1,3 +1,5 @@
+// Currently moving this over to auth/fitbit/*
+
 var FitbitStrategy = require('passport-fitbit').Strategy;
 var FitbitApiClient = require('fitbit-node');
 var passport = require('passport');
