@@ -1,4 +1,4 @@
-<nav class="navbar navbar-inverse navbar-fixed-top" ng-show='isLoggedIn()'>
+<nav class="navbar navbar-inverse navbar-fixed-top" ng-controller='HeaderCtrl' ng-if='show()'>
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -15,6 +15,7 @@
         <li><a href="#">Critter</a></li>
         <li><a href="#">Settings</a></li>
         <li><a href="#">Help</a></li>
+        <li><a ng-click='logout()'>Logout</a></li>
       </ul>
     </div>
   </div>
