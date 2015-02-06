@@ -1,7 +1,6 @@
 angular.module('gitfitApp.service.user', [])
   .factory('gitfitUser', ['$q', '$http', function ($q, $http) {
     return {
-      // todo: need $cookieStore 'token'
       show: function (username) {
         var defer = $q.defer();
         $http({

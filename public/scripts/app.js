@@ -4,6 +4,7 @@ angular.module('gitfitApp',
   'ngCookies',
   'gitfitApp.service.user',
   'gitfitApp.controller.profile',
+  'gitfitApp.controller.header',
   'gitfitApp.controller.create',
   'gitfitApp.controller.CritterCreateCtrl',
   'gitfitApp.directive.header'
