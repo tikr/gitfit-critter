@@ -1,26 +1,86 @@
-<div class="col-md-12 main">
-  <h1 class="page-header">Michaelatoecious</h1>
-  <div class="col-md-3">
-    <img src="https://openclipart.org/image/800px/svg_to_png/184028/critter3.png" height="300" class="col-md-offset-10" />
+<div class="col-md-12" ng-cloak>
+  <div id="quote">
+    <blockquote class="triangle-isosceles">"{{quote}}"</blockquote>
   </div>
-  <div class="col-md-9">
-    <div id="food"></div>
-  </div>
-  <div id="critter-info" class="col-md-offset-2">
-    <div class="col-sm-4 placeholder">
-      <img src="http://www.jojoscupcakes.net/images/contact_icon_cupcake.png" class="img-responsive" width="40" alt="Generic placeholder thumbnail">
-      <h4>DOB</h4>
-      <span class="text-muted">{{user.critter.dob}}</span>
+  <div class="placeholders">
+    <div class="row">
+      <div class="col-sm-4 placeholder">
+        <img ng-src="{{user.critter.imageDefault.replace('.jpg', '.png')}}" width="289" class="img-responsive" />
+        <h4>Critter</h4>
+        <span class="text-muted">{{user.critter.name}}</span>
+      </div>
+      <div class="col-sm-4 placeholder">
+        <div id="food"></div>
+        <h4></h4>
+        <span class="text-muted"></span>
+      </div>
+      <div class="col-sm-4 placeholder">
+        <img ng-src="{{user.github.avatar_url}}" width="285" class="img-responsive img-circle">
+        <h4>Owner</h4>
+        <span class="text-muted">@{{user.github.login}}</span>
+      </div>
     </div>
-    <div class="col-sm-4 placeholder">
-      <img src="http://winningwp.com/sdf-v1/img/rocket-big@2x.png" class="img-responsive" width="58" alt="Generic placeholder thumbnail">
-      <h4>Level</h4>
-      <span class="text-muted">{{user.critter.level}}</span>
-    </div>
-    <div class="col-sm-4 placeholder">
-      <img src="https://pbmo.files.wordpress.com/2012/06/mudflap-guy.png?w=300&h=175" class="img-responsive" width="85" alt="Generic placeholder thumbnail">
-      <h4>Type</h4>
-      <span class="text-muted">{{user.critter.type}}</span>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Level Up</h3>
+          </div>
+          <div class="panel-body">
+            <div id="level"></div>
+            <span class="text-muted">115 pts till your next power up</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-8">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Critter Attributes</h3>
+          </div>
+          <div class="panel-body">
+            <div class="col-sm-4 placeholder">
+              <img src="http://www.jojoscupcakes.net/images/contact_icon_cupcake.png" class="img-responsive" width="80">
+              <h4>DOB</h4>
+              <span class="text-muted">{{user.critter.DOB}}</span>
+            </div>
+            <div class="col-sm-4 placeholder">
+              <img src="http://winningwp.com/sdf-v1/img/rocket-big@2x.png" class="img-responsive" width="108" style="margin-top:8px">
+              <h4>Power Level</h4>
+              <span class="text-muted">{{user.critter.level}}</span>
+            </div>
+            <div class="col-sm-4 placeholder">
+              <img src="https://pbmo.files.wordpress.com/2012/06/mudflap-guy.png?w=300&h=175" class="img-responsive" width="170" style="margin-top:15px">
+              <h4>Critter Species</h4>
+              <span class="text-muted">{{user.critter.type}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Top Badges</h3>
+          </div>
+          <div id="badges" class="panel-body">
+            <div ng-repeat="badge in user.fitbit.user.topBadges" class="col-sm-2 placeholder">
+              <img ng-src="{{badge.image125px}}" />
+              <div class="caption">
+                <span class="text-muted">{{badge.name}}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Eating Habits</h3>
+          </div>
+          <div class="panel-body">
+            <div id="schedule"></div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

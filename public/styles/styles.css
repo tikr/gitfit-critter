@@ -1,89 +1,30 @@
-/*
- * Base structure
- */
-
 /* Move down content because we have a fixed navbar that is 50px tall */
 .top-padding {
-  padding-top: 50px;
+  padding-top: 60px;
 }
 
-
-/*
- * Global add-ons
- */
-
-.sub-header {
-  padding-bottom: 10px;
-  border-bottom: 1px solid #eee;
+.navbar {
+  border-radius: 0;
 }
 
-/*
- * Top navigation
- * Hide default border to remove 1px line.
- */
-.navbar-fixed-top {
-  border: 0;
+.c3-tooltip-container {
+  /* margin-top: 50px; */
 }
-
-/*
- * Sidebar
- */
-
-/* Hide for mobile, show later */
-.sidebar {
-  display: none;
-}
-@media (min-width: 768px) {
-  .sidebar {
-    position: fixed;
-    top: 51px;
-    bottom: 0;
-    left: 0;
-    z-index: 1000;
-    display: block;
-    padding: 20px;
-    overflow-x: hidden;
-    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
-    background-color: #f5f5f5;
-    border-right: 1px solid #eee;
-  }
-}
-
-/* Sidebar navigation */
-.nav-sidebar {
-  margin-right: -21px; /* 20px padding + 1px border */
-  margin-bottom: 20px;
-  margin-left: -20px;
-}
-.nav-sidebar > li > a {
-  padding-right: 20px;
-  padding-left: 20px;
-}
-.nav-sidebar > .active > a,
-.nav-sidebar > .active > a:hover,
-.nav-sidebar > .active > a:focus {
-  color: #fff;
-  background-color: #428bca;
-}
-
-
-/*
- * Main content
- */
 
 .main {
   padding: 20px;
 }
+
 @media (min-width: 768px) {
   .main {
     padding-right: 40px;
     padding-left: 40px;
   }
 }
+
 .main .page-header {
   margin-top: 0;
 }
-
 
 /*
  * Placeholder dashboard ideas
@@ -101,7 +42,7 @@
 }
 .placeholder img {
   display: inline-block;
-  border-radius: 50%;
+  /* border-radius: 50%; */
 }
 
 .external-logo {
@@ -117,25 +58,109 @@
 
 .create-creature-img {
     max-width: 200px;
+    cursor: pointer;
 }
 
 .critter-img-container {
     display: inline-block;
 }
 
+.critter-img-container:hover {
+    border-bottom: 2px solid #eee;
+}
+
+.left-panel {
+    display: inline-block;
+}
+
+.right-panel {
+    display: inline-block;
+}
+
+.choose-critter-link {
+    display: block;
+}
+
+.critter-attributes {
+    font-size: 16px;
+}
+
 #critter-info {
-  margin-top: 400px;
+  margin-top: 100px;
+}
+
+#schedule {
+  left: -13px;
+}
+
+.c3-tooltip-container {
+  text-align: left;
 }
 
 #fitbit-singup-button {
-    margin-top: 10px;
-
+  margin-top: 10px;
 }
 
 #fitbit-login-button {
-    margin-top: 10px;
+  margin-top: 10px;
 }
 
 #external-logos-container {
-    margin: 0 auto;
+  margin: 0 auto;
+}
+
+#badges .thumbnail {
+  margin-left: auto;
+  margin-right: 20px;
+}
+
+#badges .caption {
+  margin-top: 10px;
+}
+
+#index-page {
+  background-color: #eee;
+  height: 100vh;
+  text-align: center;
+}
+
+.jumbotron {
+  margin: 0;
+}
+
+#creatures img {
+  margin-left: 10px;
+}
+
+/* Bubble with an isoceles triangle
+------------------------------------------ */
+
+#quote {
+  margin: 20px;
+}
+
+blockquote {
+  border-left: none;
+}
+
+.triangle-isosceles {
+  position: relative;
+  color: #000;
+  background: #eee;
+  border-radius: 10px;
+  background: linear-gradient(top, #eee, #eee);
+  display: inline;
+}
+
+/* creates triangle */
+.triangle-isosceles:after {
+  content: "";
+  display: block; /* reduce the damage in FF3.0 */
+  position: absolute;
+  bottom: -15px;
+  left: 50px;
+  width: 0;
+  border-width: 15px 15px 0;
+  border-style: solid;
+  border-color: #eee transparent;
 }
