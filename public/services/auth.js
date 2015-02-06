@@ -1,8 +1,11 @@
-angular.module('gitfitApp.service.user', [])
-  .factory('Auth', ['$q', '$http', function ($q, $http, $cookieStore) {
+angular.module('gitfitApp.service.auth', [])
+  .factory('Auth', ['$q', '$http', '$cookieStore', 'gitfitUser', function ($q, $http, $cookieStore, gitfitUser) {
       var currentUser = {};
       if($cookieStore.get('token')) {
-        currentUser = User.get();
+        gitfitUser.show('me')
+        .then(function(user){
+            currentUser = user;
+        });
       }
       return {
         logout: function() {
@@ -15,19 +18,6 @@ angular.module('gitfitApp.service.user', [])
         isLoggedIn: function() {
           return currentUser.hasOwnProperty('role');
         },
-        isLoggedInAsync: function(cb) {
-          if(currentUser.hasOwnProperty('$promise')) {
-            currentUser.$promise.then(function() {
-              cb(true);
-            }).catch(function() {
-              cb(false);
-            });
-          } else if(currentUser.hasOwnProperty('role')) {
-            cb(true);
-          } else {
-            cb(false);
-          }
-        },
         isAdmin: function() {
           return currentUser.role === 'admin';
         },
@@ -35,4 +25,4 @@ angular.module('gitfitApp.service.user', [])
           return $cookieStore.get('token');
         }
       };
-    });
+    }]);

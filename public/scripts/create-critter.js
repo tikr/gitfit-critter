@@ -1,10 +1,15 @@
 angular.module('gitfitApp.controller.CritterCreateCtrl', [])
   .controller('CritterCreateCtrl', function($scope, $timeout, $http, $window, gitfitUser){
 
-    $scope.fireImgURL = 'images/fire.jpg';
-    $scope.waterImgURL = 'images/water.jpg';
-    $scope.airImgURL = 'images/air.jpg';
-    $scope.earthImgURL = 'images/earth.jpg';
+    $scope.fireImgURL = 'images/fireDefault.png';
+    $scope.waterImgURL = 'images/waterDefault.png';
+    $scope.airImgURL = 'images/airDefault.png';
+    $scope.earthImgURL = 'images/earthDefault.png';
+
+    $scope.earthIcon = 'images/earth.svg';
+    $scope.airIcon = 'images/air.svg';
+    $scope.fireIcon = 'images/fire.svg';
+    $scope.waterIcon = 'images/water.svg';
 
     $scope.fireShowing = true;
     $scope.earthShowing = true;
@@ -37,7 +42,16 @@ angular.module('gitfitApp.controller.CritterCreateCtrl', [])
         $scope.airShowing = false;
         $scope.fireShowing = false;
       }
-    },
+    };
+    
+    $scope.githubAuth = function(type){
+		//get encodedId for logged in user
+		gitfitUser.show('me')
+		.then(function(user){
+			var id = user.fitbit.user.encodedId;
+		  $window.location.href = '/auth/github?encodedId='+id+'&type='+type;
+		})
+	};
 
     $scope.loginWithGithub = function(critterType){
       //show kickass new picture for user's critter type
@@ -49,10 +63,11 @@ angular.module('gitfitApp.controller.CritterCreateCtrl', [])
       }, 2000)
       .then(function(val){
         //then redirect to /auth/github for github authentication
-        $window.location.href = '/auth/github?userID=jofiwjef';
+        // $window.location.href = '/auth/github?userID=jofiwjef';
+        $scope.githubAuth(critterType);
         console.log(val);
       });
-    },
+    };
 
     $scope.updateUserModelWithNewCritter = function(username, critterType){
       //$http.put username model
@@ -61,7 +76,7 @@ angular.module('gitfitApp.controller.CritterCreateCtrl', [])
       //  return $http.put('/api/user/'+user);
       //});
       return 'success';
-    },
+    };
 
     $scope.critterShowing = function(critterType){
       if (critterType === 'fire'){
