@@ -1,4 +1,24 @@
-<!-- This is a placeholder button to enable github auth -->
-<a class="btn btn-github" style='background-color:black;'href="" ng-click="githubAuth()">
-  <i class="fa fa-5x fa-github"></i> Connect with Github
-</a>
+<div ng-controller="CritterCreateCtrl">
+    <h1>Choose your Critter!<h1>
+    <div ng-show="critterShowing('earth')" class="critter-img-container">
+        <img ng-src="{{earthImgURL}}" alt="Cute earth" class="img-circle create-creature-img">
+        <br>
+        <a class="btn btn-lg btn-success" ng-click="loginWithGithub('earth')" target="_self">Choose</a>
+
+    </div>
+    <div ng-show="critterShowing('water')" class="critter-img-container">
+        <img ng-src="{{waterImgURL}}" alt="Cute water" class="img-circle create-creature-img">
+        <br>
+        <a class="btn btn-lg btn-success" ng-click="loginWithGithub('water')" target="_self">Choose</a>
+    </div>
+    <div ng-show="critterShowing('fire')" class="critter-img-container">
+        <img ng-src="{{fireImgURL}}" alt="Cute fire" class="img-circle create-creature-img">
+        <br>
+        <a class="btn btn-lg btn-success" ng-click="loginWithGithub('fire')" target="_self">Choose</a>
+    </div>
+    <div ng-show="critterShowing('air')" class="critter-img-container">
+        <img ng-src="{{airImgURL}}" alt="Cute air" class="img-circle create-creature-img">
+        <br>
+        <a class="btn btn-lg btn-success" ng-click="loginWithGithub('air')" target="_self">Choose</a>
+    </div>
+</div>
