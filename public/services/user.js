@@ -2,11 +2,13 @@ angular.module('gitfitApp.service.user', [])
   .factory('gitfitUser', ['$q', '$http', function ($q, $http) {
     return {
       show: function (username) {
+        console.log('username', username);
         var defer = $q.defer();
         $http({
           method: 'GET',
           url: '/api/users/' + username
         }).then(function (user) {
+          console.log('success');
           defer.resolve(user.data);
         }, function () {
           defer.reject(false);

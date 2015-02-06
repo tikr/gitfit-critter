@@ -117,3 +117,17 @@
 #badges .caption {
   margin-top: 10px;
 }
+
+#index-page {
+  background-color: #eee;
+  height: 100vh;
+  text-align: center;
+}
+
+.jumbotron {
+  margin: 0;
+}
+
+#creatures img {
+  margin-left: 10px;
+}

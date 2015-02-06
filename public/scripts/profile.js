@@ -1,6 +1,7 @@
 angular.module('gitfitApp.controller.profile', [])
   .controller('ProfileCtrl', ['$scope', '$routeParams', 'gitfitUser', function ($scope, $routeParams, gitfitUser) {
-    gitfitUser.show($routeParams.username).then(function (user) {
+    // leave it as 'me' some weird bug...
+    gitfitUser.show('me').then(function (user) {
       $scope.user = user;
       gitfitUser.food(user);
       gitfitUser.level(user);
