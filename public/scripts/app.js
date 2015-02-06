@@ -4,7 +4,8 @@ angular.module('gitfitApp',
   'ngCookies',
   'gitfitApp.service.user',
   'gitfitApp.controller.profile',
-  'gitfitApp.controller.create',
+  'gitfitApp.controller.create,
+  'gitfitApp.controller.CritterCreateCtrl',
   'gitfitApp.directive.header'
 ])
 .config(function($routeProvider, $locationProvider, $httpProvider) {
@@ -19,6 +20,10 @@ angular.module('gitfitApp',
     .when('/critter/:username', {
       templateUrl: 'views/profile.html',
       controller: 'ProfileCtrl'
+    })
+    .when('/create', {
+        templateUrl: 'views/create.html',
+        controller: 'CritterCreateCtrl'
     })
     .otherwise({
       redirectTo: '/'
