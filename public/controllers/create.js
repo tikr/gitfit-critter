@@ -1,5 +1,5 @@
-angular.module('gitfitApp')
-.controller('createCtrl', function($scope, $window, gitfitUser){
+angular.module('gitfitApp.controller.create', [])
+.controller('CreateCtrl', function($scope, $window, gitfitUser){
 	$scope.githubAuth = function(){
 		//get encodedId for logged in user
 		gitfitUser.show('me')
