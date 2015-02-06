@@ -9,7 +9,7 @@ var router = express.Router();
 router
   .get('/', function(req, res, next){
   	passport.authenticate('github', {
-      failureRedirect: '/signup',
+      failureRedirect: '/',
       session: false,
       // pull off encodedId from URL
       state: req.url.split('=')[1]
@@ -17,7 +17,7 @@ router
   })
 
   .get('/callback', passport.authenticate('github', {
-    failureRedirect: '/signup',
+    failureRedirect: '/',
     session: false
   }));
 

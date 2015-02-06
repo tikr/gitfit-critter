@@ -8,12 +8,12 @@ var router = express.Router();
 
 router
   .get('/', passport.authenticate('fitbit', {
-    failureRedirect: '/signup',
+    failureRedirect: '/',
     session: false
   }))
 
   .get('/callback', passport.authenticate('fitbit', {
-    failureRedirect: '/signup',
+    failureRedirect: '/',
     session: false
   }), auth.setTokenCookie);
 
