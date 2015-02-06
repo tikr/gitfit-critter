@@ -18,32 +18,32 @@ angular.module('gitfitApp.controller.CritterCreateCtrl', [])
 
     $scope.showChosenCritterImage = function(critterType){
       if (critterType === 'fire'){
-        $scope.fireImgURL = 'images/fire-chosen.jpg';
+        //$scope.fireImgURL = 'images/fire-chosen.jpg';
         //hide other images
         $scope.waterShowing = false;
         $scope.airShowing = false;
         $scope.earthShowing = false;
       } else if (critterType === 'water'){
         //hide other images
-        $scope.waterImgURL = 'images/water-chosen.jpg';
+        //$scope.waterImgURL = 'images/water-chosen.jpg';
         $scope.fireShowing = false;
         $scope.airShowing = false;
         $scope.earthShowing = false;
       } else if (critterType === 'air'){
-        $scope.airImgURL = 'images/air-chosen.jpg';
+        //$scope.airImgURL = 'images/air-chosen.jpg';
         //hide other images
         $scope.waterShowing = false;
         $scope.fireShowing = false;
         $scope.earthShowing = false;
       } else if (critterType === 'earth'){
-        $scope.earthImgURL = 'images/earth-chosen.jpg';
+        //$scope.earthImgURL = 'images/earth-chosen.jpg';
         //hide other images
         $scope.waterShowing = false;
         $scope.airShowing = false;
         $scope.fireShowing = false;
       }
     };
-    
+
     $scope.githubAuth = function(type){
 		//get encodedId for logged in user
 		gitfitUser.show('me')

@@ -117,10 +117,31 @@
 
 .create-creature-img {
     max-width: 200px;
+    cursor: pointer;
 }
 
 .critter-img-container {
     display: inline-block;
+}
+
+.critter-img-container:hover {
+    border-bottom: 2px solid #eee;
+}
+
+.left-panel {
+    display: inline-block;
+}
+
+.right-panel {
+    display: inline-block;
+}
+
+.choose-critter-link {
+    display: block;
+}
+
+.critter-attributes {
+    font-size: 16px;
 }
 
 #critter-info {
