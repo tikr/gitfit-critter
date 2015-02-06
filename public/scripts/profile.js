@@ -1,16 +1,12 @@
 angular.module('gitfitApp.controller.profile', [])
   .controller('ProfileCtrl', ['$scope', '$routeParams', 'gitfitUser', function ($scope, $routeParams, gitfitUser) {
     // leave it as 'me' some weird bug...
-    gitfitUser.show('me').then(function (user) {
+    gitfitUser.show($routeParams.username).then(function (user) {
       $scope.user = user;
       gitfitUser.food(user);
       gitfitUser.level(user);
       gitfitUser.schedule(user);
     });
-
-    $scope.$on('$routeChangeSuccess', function () {
-      console.log('load');
-    })
 
     $scope.quotes = [
       'A branch, a tag, and a reflog walk into a bar. The bartender says, "What is this, some sort of rebase?"',

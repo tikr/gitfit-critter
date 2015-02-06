@@ -92,7 +92,7 @@ angular.module('gitfitApp.service.user', [])
           return c3.generate({
             bindto: '#schedule',
             data: {
-              columns: columns.length > 0 ? columns : [ [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ],
+              columns: columns.length > 0 ? columns : plots,
               type: 'step'
             },
             color: {

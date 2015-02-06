@@ -65,7 +65,7 @@ exports.dailyCommits = function (req, res) {
  // Richards temp data
  exports.show = function (req, res) {
    User.findOne({
-     'github.login': req.params.username
+     'github.login': req.url.split('/')[1]
    }, function (err, user) {
     if (err) res.status(404).end();
     if (user) res.status(200).json(user);
@@ -179,4 +179,3 @@ exports.postNewSkill = function(req, res, next){
     }
   );
 };
-/***** End copied from tikr *****/
