@@ -104,6 +104,38 @@ body {
   border-radius: 50%;
 }
 
+.external-logo {
+    max-width: 35px;
+}
+
+.cute-animal-img {
+    display: inline-block;
+    max-width: 200px;
+    position: relative;
+    margin-left: -50px;
+}
+
+.create-creature-img {
+    max-width: 200px;
+}
+
+.critter-img-container {
+    display: inline-block;
+}
+
 #critter-info {
   margin-top: 400px;
+}
+
+#fitbit-singup-button {
+    margin-top: 10px;
+
+}
+
+#fitbit-login-button {
+    margin-top: 10px;
+}
+
+#external-logos-container {
+    margin: 0 auto;
 }
