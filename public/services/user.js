@@ -5,7 +5,7 @@ angular.module('gitfitApp.service.user', [])
         var defer = $q.defer();
         $http({
           method: 'GET',
-          url: '/api/users/'+username
+          url: '/api/users/' + username
         }).then(function (user) {
           defer.resolve(user.data);
         }, function () {
@@ -16,12 +16,13 @@ angular.module('gitfitApp.service.user', [])
       },
 
       food: function (user) {
+        var math = (user.critter.food.current / user.critter.food.needed) || 0;
         return c3.generate({
           bindto: '#food',
           data: {
             columns: [
-              [ 'Current', (user.critter.food.current / user.critter.food.needed) * 100 ],
-              [ 'Needed', 100 - (user.critter.food.current / user.critter.food.needed) * 100 ]
+              [ 'Current', math * 100 ],
+              [ 'Needed', 100 - math * 100 ]
             ],
             type : 'donut'
           },
@@ -59,30 +60,43 @@ angular.module('gitfitApp.service.user', [])
       },
 
       schedule: function (user) {
-        var plots = [];
-        var patts = [];
-        var colors = $http({
+        $http({
           method: 'GET',
-          url: '/api/languages'
-        }).then(function (data) {
-          var langs = ['JavaScript', 'Ruby', 'Python', 'C++', 'PowerShell', 'Rust', 'Pascal', 'Swift'];
-          for (var i = 0; i < langs.length; i++) {
-            var points = [langs[i]];
-            var pat = data.data[langs[i]];
-            patts.push(pat.color);
-            for (var j = 0; j < 24; j++) {
-              points.push(Math.floor(Math.random() * 30));
+          url: '/api/users/' + user.github.login + '/dailyCommits'
+        }).then(function (commits) {
+          var commits = commits.data;
+          var plots = {};
+          var patterns = [
+            '#45B29D', '#EFC94C', '#E27A3F', '#DF5A49', '#FF436A', '#13DCF2',
+            '#06ADBF', '#B9E366', '#7D4F7D', '#BBBEB5', '#9DA5A8', '#757E8E',
+            '#F2E3B6', '#F28C8C', '#BEDB39', '#1C8442', '#6F92BF', '#B0D165'
+          ];
+          for (var i = 0; i < commits.length; i++) {
+            var commit = commits[i];
+            var repo = commit.repoName;
+            if (plots[repo]) {
+              plots[repo][commit.hour] += commit.numCommits;
+            } else {
+              plots[repo] = [];
+              for (var j = 0; j < 24; j++) {
+                plots[repo].push(0);
+              }
             }
-            plots.push(points);
+          }
+          var cnt = 0;
+          var columns = [];
+          for (var repo in plots) {
+            columns[cnt] = [repo].concat(plots[repo]);
+            cnt++;
           }
           return c3.generate({
             bindto: '#schedule',
             data: {
-              columns: plots,
+              columns: columns.length > 0 ? columns : [ [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] ],
               type: 'step'
             },
             color: {
-              pattern: patts
+              pattern: patterns
             },
             axis: {
               x: {

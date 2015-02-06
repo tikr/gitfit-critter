@@ -98,14 +98,22 @@
 }
 
 #fitbit-singup-button {
-    margin-top: 10px;
-
+  margin-top: 10px;
 }
 
 #fitbit-login-button {
-    margin-top: 10px;
+  margin-top: 10px;
 }
 
 #external-logos-container {
-    margin: 0 auto;
+  margin: 0 auto;
+}
+
+#badges .thumbnail {
+  margin-left: auto;
+  margin-right: 20px;
+}
+
+#badges .caption {
+  margin-top: 10px;
 }

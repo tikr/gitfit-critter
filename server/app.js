@@ -32,10 +32,10 @@ app.use(express.static(path.join(__dirname, '/../public')));
 app.use('/api/users', require('./api/user'));
 app.use('/auth', require('./auth'));
 
-app.get('/api/languages', function (req, res) {
-  var doc = yaml.safeLoad(fs.readFileSync(path.join(__dirname, 'languages.yml'), 'utf8'));
-  res.status(200).json(doc);
-});
+// app.get('/api/languages', function (req, res) {
+//   var doc = yaml.safeLoad(fs.readFileSync(path.join(__dirname, 'languages.yml'), 'utf8'));
+//   res.status(200).json(doc);
+// });
 
 app.all('*', function (req, res) {
   res.sendFile('index.html', { root: __dirname + '/../public/' });
