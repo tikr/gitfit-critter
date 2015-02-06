@@ -64,7 +64,6 @@ exports.destroy = function(req, res) {
  * Get my info
  */
 exports.me = function(req, res, next) {
-  console.log('req', req)
   var userId = req.user._id;
   User.findOne({
     _id: userId
