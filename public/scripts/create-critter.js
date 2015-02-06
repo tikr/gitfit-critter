@@ -16,6 +16,8 @@ angular.module('gitfitApp.controller.CritterCreateCtrl', [])
     $scope.waterShowing = true;
     $scope.airShowing = true;
 
+    $scope.critterHasBeenChosen = false;
+
     $scope.showChosenCritterImage = function(critterType){
       if (critterType === 'fire'){
         //$scope.fireImgURL = 'images/fire-chosen.jpg';
@@ -42,6 +44,7 @@ angular.module('gitfitApp.controller.CritterCreateCtrl', [])
         $scope.airShowing = false;
         $scope.fireShowing = false;
       }
+      $scope.critterHasBeenChosen = true;
     };
 
     $scope.githubAuth = function(type){

@@ -1,5 +1,5 @@
 <div ng-controller="CritterCreateCtrl" style='text-align: center;'>
-    <h1>Choose your Critter!<h1>
+    <h1 ng-hide="critterHasBeenChosen">Choose your Critter!<h1>
     <div ng-show="critterShowing('earth')" class="critter-img-container">
         <div>Earth Worm</div>
         <div class="left-panel">
