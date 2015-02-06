@@ -8,6 +8,10 @@ angular.module('gitfitApp.controller.profile', [])
       gitfitUser.schedule(user);
     });
 
+    $scope.$on('$routeChangeSuccess', function () {
+      console.log('load');
+    })
+
     $scope.quotes = [
       'A branch, a tag, and a reflog walk into a bar. The bartender says, "What is this, some sort of rebase?"',
       'You can checkout any time you like, but you can never commit.',

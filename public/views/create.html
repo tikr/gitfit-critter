@@ -1,60 +1,56 @@
 <div ng-controller="CritterCreateCtrl" style='text-align: center;'>
-    <h1 ng-hide="critterHasBeenChosen">Choose your Critter!<h1>
-    <div ng-show="critterShowing('earth')" class="critter-img-container">
-        <div>Earth Worm</div>
-        <div class="left-panel">
-    	    <img ng-src='{{earthIcon}}' style='height: 50px; vertical-align: top;'>
-    	    <div class="critter-attributes">Friendliness</div>
-            <div class="critter-attributes">Goofiness</div>
-            <div class="critter-attributes">Honesty</div>
-            <div class="critter-attributes">Fun</div>
-    	</div>
-        <div class="right-panel">
-            <a ng-click="loginWithGithub('earth')" target="_self"><img ng-src="{{earthImgURL}}" alt="Cute earth" class="create-creature-img"></a>
-        </div>
-
+  <h1 ng-hide="critterHasBeenChosen">Choose your Critter!<h1>
+  <div ng-show="critterShowing('earth')" class="critter-img-container">
+    <div>Earth Worm</div>
+    <div class="left-panel">
+	    <img ng-src='{{earthIcon}}' style='height: 50px; vertical-align: top;'>
+	    <div class="critter-attributes">Friendliness</div>
+        <div class="critter-attributes">Goofiness</div>
+        <div class="critter-attributes">Honesty</div>
+        <div class="critter-attributes">Fun</div>
+  	</div>
+    <div class="right-panel">
+      <a ng-click="loginWithGithub('earth')" target="_self"><img ng-src="{{earthImgURL}}" alt="Cute earth" class="create-creature-img"></a>
     </div>
-
-    <div ng-show="critterShowing('water')" class="critter-img-container">
-        <div>Water Turtle</div>
-        <div class="left-panel">
-            <img ng-src='{{waterIcon}}' style='height: 50px;'>
-            <div class="critter-attributes">Relaxation</div>
-            <div class="critter-attributes">Carefree</div>
-            <div class="critter-attributes">Gentle</div>
-            <div class="critter-attributes">Kindness</div>
-        </div>
-        <div class="right-panel">
-            <a ng-click="loginWithGithub('water')" target="_self"><img ng-src="{{waterImgURL}}" alt="Cute water" class="create-creature-img"></a>
-        </div>
-
+  </div>
+  <div ng-show="critterShowing('water')" class="critter-img-container">
+    <div>Water Turtle</div>
+    <div class="left-panel">
+      <img ng-src='{{waterIcon}}' style='height: 50px;'>
+      <div class="critter-attributes">Relaxation</div>
+      <div class="critter-attributes">Carefree</div>
+      <div class="critter-attributes">Gentle</div>
+      <div class="critter-attributes">Kindness</div>
     </div>
-    <div ng-show="critterShowing('fire')" class="critter-img-container">
-        <div>Fire Fox</div>
-        <div class="left-panel">
-            <img ng-src='{{fireIcon}}' style='height: 50px;'>
-            <div class="critter-attributes">Passion</div>
-            <div class="critter-attributes">Intelligence</div>
-            <div class="critter-attributes">Sly</div>
-            <div class="critter-attributes">Flexible</div>
-        </div>
-        <div class="right-panel">
-            <a ng-click="loginWithGithub('fire')" target="_self"><img ng-src="{{fireImgURL}}" alt="Cute fire" class="create-creature-img"></a>
-        </div>
-
+    <div class="right-panel">
+      <a ng-click="loginWithGithub('water')" target="_self"><img ng-src="{{waterImgURL}}" alt="Cute water" class="create-creature-img"></a>
     </div>
-    <div ng-show="critterShowing('air')" class="critter-img-container">
-        <div>Air Eagle</div>
-        <div class="left-panel">
-            <img ng-src='{{airIcon}}' style='height: 50px;'>
-            <div class="critter-attributes">Wisdom</div>
-            <div class="critter-attributes">Honor</div>
-            <div class="critter-attributes">Foresight</div>
-            <div class="critter-attributes">Leadership</div>
-        </div>
-        <div class="right-panel">
-            <a ng-click="loginWithGithub('air')" target="_self"><img ng-src="{{airImgURL}}" alt="Cute air" class="create-creature-img"></a>
-        </div>
-
+  </div>
+  <div ng-show="critterShowing('fire')" class="critter-img-container">
+    <div>Fire Fox</div>
+    <div class="left-panel">
+      <img ng-src='{{fireIcon}}' style='height: 50px;'>
+      <div class="critter-attributes">Passion</div>
+      <div class="critter-attributes">Intelligence</div>
+      <div class="critter-attributes">Sly</div>
+      <div class="critter-attributes">Flexible</div>
     </div>
+    <div class="right-panel">
+      <a ng-click="loginWithGithub('fire')" target="_self"><img ng-src="{{fireImgURL}}" alt="Cute fire" class="create-creature-img"></a>
+    </div>
+  </div>
+  <div ng-show="critterShowing('air')" class="critter-img-container">
+    <div>Air Eagle</div>
+    <div class="left-panel">
+      <img ng-src='{{airIcon}}' style='height: 50px;'>
+      <div class="critter-attributes">Wisdom</div>
+      <div class="critter-attributes">Honor</div>
+      <div class="critter-attributes">Foresight</div>
+      <div class="critter-attributes">Leadership</div>
+    </div>
+    <div class="right-panel">
+      <a ng-click="loginWithGithub('air')" target="_self"><img ng-src="{{airImgURL}}" alt="Cute air" class="create-creature-img"></a>
+    </div>
+  </div>
+  <div style="text-align:center" ng-if="critterHasBeenChosen">Loading. Please wait</div>
 </div>

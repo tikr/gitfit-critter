@@ -1,12 +1,5 @@
 'use strict';
 
-// Need to add the schema to this
-
-// var User = require('./user.model');
-
-/***** Copied from tikr edit as required *****/
-'use strict';
-
 var User = require('./user.model');
 var github = require('octonode');
 var config = require('../../config');
@@ -140,7 +133,7 @@ exports.me = function(req, res, next) {
   var userId = req.user._id;
   User.findOne({
     _id: userId
-  }, '-salt -hashedPassword', function(err, user) { // don't ever give out the password or salt
+  }, '-salt -hashedPassword', function(err, user) {
     if (err) return next(err);
     if (!user) return res.json(401);
     res.status(200).json(user);

@@ -1,9 +1,9 @@
-<div class="col-md-12">
+<div class="col-md-12" ng-cloak>
   <blockquote>{{quote}}</blockquote>
   <div class="placeholders">
     <div class="row">
       <div class="col-sm-4 placeholder">
-        <img src="https://openclipart.org/image/800px/svg_to_png/184028/critter3.png" width="250" class="img-responsive" alt="Generic placeholder thumbnail" />
+        <img ng-src="{{user.critter.imageDefault.replace('.jpg', '.png')}}" width="289" class="img-responsive" />
         <h4>Critter</h4>
         <span class="text-muted">{{user.critter.name}}</span>
       </div>
@@ -13,7 +13,7 @@
         <span class="text-muted"></span>
       </div>
       <div class="col-sm-4 placeholder">
-        <img ng-src="{{user.github.avatar_url}}" width="285" class="img-responsive img-circle" alt="Generic placeholder thumbnail">
+        <img ng-src="{{user.github.avatar_url}}" width="285" class="img-responsive img-circle">
         <h4>Owner</h4>
         <span class="text-muted">@{{user.github.login}}</span>
       </div>
@@ -37,17 +37,17 @@
           </div>
           <div class="panel-body">
             <div class="col-sm-4 placeholder">
-              <img src="http://www.jojoscupcakes.net/images/contact_icon_cupcake.png" class="img-responsive" width="80" alt="Generic placeholder thumbnail">
+              <img src="http://www.jojoscupcakes.net/images/contact_icon_cupcake.png" class="img-responsive" width="80">
               <h4>DOB</h4>
               <span class="text-muted">{{user.critter.DOB}}</span>
             </div>
             <div class="col-sm-4 placeholder">
-              <img src="http://winningwp.com/sdf-v1/img/rocket-big@2x.png" class="img-responsive" width="108" alt="Generic placeholder thumbnail" style="margin-top:8px">
+              <img src="http://winningwp.com/sdf-v1/img/rocket-big@2x.png" class="img-responsive" width="108" style="margin-top:8px">
               <h4>Power Level</h4>
               <span class="text-muted">{{user.critter.level}}</span>
             </div>
             <div class="col-sm-4 placeholder">
-              <img src="https://pbmo.files.wordpress.com/2012/06/mudflap-guy.png?w=300&h=175" class="img-responsive" width="170" alt="Generic placeholder thumbnail" style="margin-top:15px">
+              <img src="https://pbmo.files.wordpress.com/2012/06/mudflap-guy.png?w=300&h=175" class="img-responsive" width="170" style="margin-top:15px">
               <h4>Critter Species</h4>
               <span class="text-muted">{{user.critter.type}}</span>
             </div>
