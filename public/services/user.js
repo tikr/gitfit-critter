@@ -8,7 +8,6 @@ angular.module('gitfitApp.service.user', [])
           url: '/api/users/'+username
         }).then(function (user) {
           defer.resolve(user.data);
-          console.log('ok', user);
         }, function () {
           defer.reject(false);
         });
