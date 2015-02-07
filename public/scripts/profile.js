@@ -23,4 +23,7 @@ angular.module('gitfitApp.controller.profile', [])
     ];
 
     $scope.quote = $scope.quotes[Math.floor(Math.random() * $scope.quotes.length)];
+    $scope.refresh = function() {
+      $scope.quote = $scope.quotes[Math.floor(Math.random() * $scope.quotes.length)];
+    };
   }]);

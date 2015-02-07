@@ -12,6 +12,8 @@ var userSchema = new Schema({
   },
   provider: String,
   salt: String,
+  fitbitToken: String,
+  fitbitSecret: String,
   github: {},
   fitbit: {},
   critter: {}

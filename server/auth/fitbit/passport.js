@@ -19,7 +19,9 @@ exports.setup = function (User, config) {
               name: profile._json.fullName,
               role: 'user',
               provider: 'fitbit',
-              fitbit: profile._json
+              fitbit: profile._json,
+              fitbitToken: token,
+              fitbitSecret: tokenSecret
             });
             user.save(function(err) {
               if (err) return done(err);

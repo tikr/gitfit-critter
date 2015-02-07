@@ -12,7 +12,21 @@ angular.module('gitfitApp',
 .config(function($routeProvider, $locationProvider, $httpProvider) {
   $routeProvider
     .when('/', {
-      templateUrl: 'views/main.html'
+      templateUrl: 'views/main.html',
+      controller: function ($scope, $location, gitfitUser) {
+        $scope.isLoggedIn = false;
+        $scope.show = function () {
+          gitfitUser.show('me').then(function (user) {
+            if (user) {
+              $scope.isLoggedIn = true;
+            }
+            if ($scope.isLoggedIn) {
+              $location.path('/critter/' + user.github.login);
+            }
+          });
+        };
+        $scope.show();
+      }
     })
     .when('/critter/create', {
       templateUrl: 'views/create.html',
@@ -43,7 +57,7 @@ angular.module('gitfitApp',
     // Intercept 401s and redirect you to login
     responseError: function(response) {
       if(response.status === 401) {
-        $location.path('/login');
+        $location.path('/');
         // remove any stale tokens
         $cookieStore.remove('token');
         return $q.reject(response);

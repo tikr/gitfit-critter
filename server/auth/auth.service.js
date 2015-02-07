@@ -68,7 +68,11 @@ function setTokenCookie(req, res) {
   if (!req.user) return res.json(404, { message: 'Something went wrong, please try again.'});
   var token = signToken(req.user._id, req.user.role);
   res.cookie('token', JSON.stringify(token));
-  res.redirect('/critter/create');
+  if(req.user.critter){
+    res.redirect('/critter/'+req.user.github.login);
+  } else{
+    res.redirect('/critter/create');
+  }
 }
 
 exports.isAuthenticated = isAuthenticated;

@@ -1,20 +1,31 @@
 #!/usr/bin/env node
 
+var config = require('../server/config');
 var sendgrid = require('sendgrid')(
-  process.env.SENDGRID_USERNAME,
-  process.env.SENDGRID_PASSWORD
+  config.sendgrid.username,
+  config.sendgrid.password
 );
-var User = require('./models/user');
+var FitbitApiClient = require('fitbit-node');
+var User = require('../server/api/user/user.model');
 var mongoose = require('mongoose');
 var MONGO_URI = 'mongodb://admin:admin@ds041561.mongolab.com:41561/heroku_app33693178'
 
-// mongoose.connect(MONGO_URI);
+mongoose.connect(MONGO_URI);
+var fitbit = new FitbitApiClient(config.fitbit.id, config.fitbit.secret);
 
-// User.find({}, function(err, users){
-//   if(err) throw err;
-//   console.log(users);
+User.find({}, function(err, users){
+  if(err) throw err;
+  for(var i = 0; i < users.length; i++){
+  	var user = users[i];
+  	console.log('---',  user.fitbitToken, user.fitbitSecret, user.fitbit.user.encodedId)
+	   fitbit.requestResource('/activities.json', 'GET', user.fitbitToken, user.fitbitSecret, user.fitbit.user.encodedId).then(function (data) {  
+       console.log('fffff', data);
+     }, function (err) {
+       console.log('ERROR!',err);
+     });
+  }
 
-// });
+});
 
 // sendgrid.send({
 //     to: 'mikestaub22@gmail.com',

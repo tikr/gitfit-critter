@@ -5,9 +5,8 @@
   <div class="placeholders">
     <div class="row">
       <div class="col-sm-4 placeholder">
-        <img ng-src="{{user.critter.imageDefault.replace('.jpg', '.png')}}" width="289" class="img-responsive" />
-        <h4>Critter</h4>
-        <span class="text-muted">{{user.critter.name}}</span>
+        <img ng-click="refresh()" ng-src="{{user.critter.imageDefault.replace('.jpg', '.png')}}" width="289" class="img-responsive" />
+        <h4>{{user.critter.name}}</h4>
       </div>
       <div class="col-sm-4 placeholder">
         <div id="food"></div>
@@ -28,7 +27,7 @@
           </div>
           <div class="panel-body">
             <div id="level"></div>
-            <span class="text-muted">115 pts till your next power up</span>
+            <span class="text-muted">115 steps till your next level up</span>
           </div>
         </div>
       </div>
@@ -45,12 +44,12 @@
             </div>
             <div class="col-sm-4 placeholder">
               <img src="http://winningwp.com/sdf-v1/img/rocket-big@2x.png" class="img-responsive" width="108" style="margin-top:8px">
-              <h4>Power Level</h4>
+              <h4>Level</h4>
               <span class="text-muted">{{user.critter.level}}</span>
             </div>
             <div class="col-sm-4 placeholder">
               <img src="https://pbmo.files.wordpress.com/2012/06/mudflap-guy.png?w=300&h=175" class="img-responsive" width="170" style="margin-top:15px">
-              <h4>Critter Species</h4>
+              <h4>Critter Type</h4>
               <span class="text-muted">{{user.critter.type}}</span>
             </div>
           </div>

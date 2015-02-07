@@ -1,13 +1,13 @@
-<div ng-controller="CritterCreateCtrl" style='text-align: center;'>
+<div ng-controller="CritterCreateCtrl" style='text-align:center'>
   <h1 ng-hide="critterHasBeenChosen">Choose your Critter!<h1>
   <div ng-show="critterShowing('earth')" class="critter-img-container">
     <div>Earth Worm</div>
     <div class="left-panel">
 	    <img ng-src='{{earthIcon}}' style='height: 50px; vertical-align: top;'>
 	    <div class="critter-attributes">Friendliness</div>
-        <div class="critter-attributes">Goofiness</div>
-        <div class="critter-attributes">Honesty</div>
-        <div class="critter-attributes">Fun</div>
+      <div class="critter-attributes">Goofiness</div>
+      <div class="critter-attributes">Honesty</div>
+      <div class="critter-attributes">Fun</div>
   	</div>
     <div class="right-panel">
       <a ng-click="loginWithGithub('earth')" target="_self"><img ng-src="{{earthImgURL}}" alt="Cute earth" class="create-creature-img"></a>
@@ -52,5 +52,7 @@
       <a ng-click="loginWithGithub('air')" target="_self"><img ng-src="{{airImgURL}}" alt="Cute air" class="create-creature-img"></a>
     </div>
   </div>
-  <div style="text-align:center" ng-if="critterHasBeenChosen">Loading. Please wait...</div>
+  <div style="text-align:center" ng-if="critterHasBeenChosen">
+    <img ng-src="images/loading.gif" />
+  </div>
 </div>

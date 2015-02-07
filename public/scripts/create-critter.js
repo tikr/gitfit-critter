@@ -17,6 +17,15 @@ angular.module('gitfitApp.controller.CritterCreateCtrl', [])
     $scope.airShowing = true;
 
     $scope.critterHasBeenChosen = false;
+    
+    $scope.hasCritter = function(){
+        gitfitUser.show('me')
+        .then(function(user){
+            if(user.critter){
+                $window.location.href = '/critter/'+user.github.login;
+            }
+        })
+    };
 
     $scope.showChosenCritterImage = function(critterType){
       if (critterType === 'fire'){
